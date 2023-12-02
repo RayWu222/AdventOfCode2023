@@ -20,7 +20,7 @@ for line in lines:
             break
     
     total += left + right
-    # print('left: ' + str(left) + " | right: " + str(right) + " | total = " + str(total))
+
 print(total)
         
 
