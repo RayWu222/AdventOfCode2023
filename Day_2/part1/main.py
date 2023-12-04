@@ -10,7 +10,7 @@ res = 0
 #each line
 for line in lines:
     line = line.rstrip("\n")
-    shallowCopy =  balls.copy()
+    isPossible = True
     red = 0
     green = 0
     blue = 0
@@ -24,19 +24,22 @@ for line in lines:
 
     #colors part
     for i in subset:
-
+        
+        shallowCopy =  balls.copy()
+        print(i)
         colors = i.split(",")
         #each color
         for color in colors:
             #print(color)
             quantity = color.split(" ")
-            print("color : " + quantity[2] + " | quantity: " + quantity[1])
+            #print("color : " + quantity[2] + " | quantity: " + quantity[1])
             shallowCopy[quantity[2]] -= int(quantity[1])
-    isPossible = True
-    for key in shallowCopy:
-        if shallowCopy[key] < 0:
-            isPossible = False
-            break
+        #?
+        
+        for key in shallowCopy:
+            if shallowCopy[key] < 0:
+                isPossible = False
+                break
     if isPossible:
         res += int(id)
 
